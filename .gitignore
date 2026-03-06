@@ -9,3 +9,6 @@ venv/
 # OS / IDE files
 .DS_Store
 .vscode/
+
+.devcontainer
+runtime.txt
