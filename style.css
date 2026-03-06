@@ -81,8 +81,8 @@ body[data-theme="dark"] .card {
 /* Hover effect - Lebih subtle */
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 
-                0 0 10px rgba(229, 9, 20, 0.1); /* Glow merah tipis */
+    box-shadow: 0 15px 10x rgba(0, 0, 0, 0.6), 
+                0 0 10px rgba(229, 9, 20, 0.1); 
     border-color: var(--brand1); /* Border berubah jadi merah saat hover */
 }
 /* ---------------- Headings ---------------- */
