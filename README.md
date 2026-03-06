@@ -1,7 +1,7 @@
 # 🎬 Netflix Customer Churn Prediction App
 
 ## 🔗 Link Streamlit
-https://your-streamlit-app-link.streamlit.app/
+[Streamlit](https://app-netflix-customer-churn-reyhan.streamlit.app/)
 
 ## 📌 Project Description
 This project is a **Customer Churn Prediction Web Application** built using Machine Learning and deployed with Streamlit. The application predicts whether a streaming platform customer is likely to churn based on demographic information, subscription details, and viewing behavior.
