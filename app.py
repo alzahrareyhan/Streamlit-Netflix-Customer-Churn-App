@@ -4,18 +4,23 @@ from views.tentang_saya import show_tentang_saya
 from views.prediction import show_prediction
 from views.kontak import show_kontak
 
+# ------------------- Page Config -------------------
+st.set_page_config(
+    page_title="Netflix Customer Churn App",
+    page_icon="📉",
+    layout="wide"
+)
 
+# ------------------- Load CSS -------------------
+with open("style.css", "r", encoding="utf-8") as f:
+    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-st.set_page_config(page_title="Netflix Customer Churn App", page_icon="📉", layout="wide")
-
-st.markdown(f'<style>{open("style.css").read()}</style>', unsafe_allow_html=True)
-def load_css():
-    with open("style.css","r", encoding="utf-8") as f:
-        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-
-load_css()
-
-st.sidebar.markdown("<div class='card'><div class='h1'>📉 Churn App</div><p class='muted'>Netflix Customer Churn </p></div>", unsafe_allow_html=True)
+# ------------------- Sidebar -------------------
+st.sidebar.markdown(
+    "<div class='card'><div class='h1'>📉 Churn App</div>"
+    "<p class='muted'>Netflix Customer Churn</p></div>",
+    unsafe_allow_html=True
+)
 
 menu = st.sidebar.radio(
     "Menu",

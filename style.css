@@ -1,182 +1,235 @@
-/* --- Base --- */
+/* ---------------- Root Variables ---------------- */
 :root {
-  --bg: #0b0b0b;
-  --panel: rgba(255,255,255,0.06);
-  --text: #f5f5f5;
-  --muted: rgba(232,238,252,0.65);
-  --brand1: #e50914;
-  --brand2: #b20710;
-  --shadow: 0 18px 50px rgba(0,0,0,0.35);
-  --radius: 18px;
-  --highlight: #6366F1;
-  --transition-speed: 0.3s;
+    --brand1: #e50914;
+    --brand2: #b20710;
+    --highlight: #6366F1;
+
+    --radius: 18px;
+    --transition-speed: 0.3s;
+
+    --card-shadow-light: 0 8px 18px rgba(0,0,0,0.15);
+    --card-shadow-dark: 0 20px 45px rgba(0,0,0,0.9);
 }
 
-/* Import font */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+/* ---------------- Dark Mode Improved ---------------- */
+body[data-theme="dark"] {
+    --bg: #050505;        /* Hitam pekat */
+    --text: #f5f5f5;
+    --panel: #1a1a1a;     /* Lebih terang dari bg agar kontras */
+    --input-bg: #222222;
+    /* Kita buat shadow yang transparan, bukan hitam solid */
+    --card-shadow-dark: 0 10px 30px rgba(0, 0, 0, 0.5), 
+                        0 0 0 1px rgba(255, 255, 255, 0.05); 
+}
 
-/* Body & App */
+/* ---------------- Light Mode ---------------- */
+body[data-theme="light"] {
+
+    --bg: #ffffff;
+    --text: #0b0b0b;
+
+    --panel: #f8f8f8;
+    --input-bg: #ffffff;
+}
+
+/* ---------------- App ---------------- */
 .stApp {
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'Roboto', sans-serif;
-  padding-top: 50px;
-  overflow-x: hidden;
-  font-size: 16px;
+
+    background-color: var(--bg);
+    color: var(--text);
+
+    font-family: 'Roboto', sans-serif;
+
+    padding-top: 40px;
+    overflow-x: hidden;
+
+    font-size: 16px;
 }
 
-/* Sidebar */
+/* ---------------- Sidebar ---------------- */
 .stSidebar {
-  background-color: #0b0b0b;
-  color: var(--text);
-  border-right: 2px solid var(--brand1);
-}
-.stSidebar .stRadio button, .stSidebar .stSelectbox button {
-  color: var(--brand1);
-  font-weight: 700;
-  transition: all var(--transition-speed);
-}
-.stSidebar .stRadio button:hover, .stSidebar .stSelectbox button:hover {
-  background: var(--brand2);
+
+    background-color: var(--bg);
+    color: var(--text);
+
+    border-right: 2px solid var(--brand1);
 }
 
-/* Card Styles */
+/* ---------------- Card ---------------- */
 .card {
-  background: var(--panel);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--radius);
-  padding: 20px;
-  margin-bottom: 25px;
-  box-shadow: var(--shadow);
-  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-}
-.card:hover {
-  transform: scale(1.02);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+
+    background: var(--panel);
+    border-radius: var(--radius);
+    padding: 22px;
+    margin-bottom: 25px;
+    /* Border halus untuk memisahkan bidang */
+    border: 1px solid rgba(255, 255, 255, 0.08); 
+    transition: all var(--transition-speed) ease;
+    box-shadow: var(--card-shadow-light);
 }
 
-/* Headings */
-h1,h2,h3,h4,h5,h6 {
-  font-family: 'Roboto', sans-serif;
-  color: var(--brand1);
-}
-
-/* KPI Metrics */
-.stMetricValue {
-  font-size: 2.5em;
-  font-weight: 800;
-  color: var(--brand1);
-  transition: all var(--transition-speed);
-}
-.stMetricValue:hover {
-  color: var(--highlight);
-  transform: scale(1.1);
-  text-shadow: 0 0 10px var(--highlight);
-}
-
-/* Input Fields */
-.stNumberInput input, .stTextInput input {
-  background: rgba(255,255,255,0.06) !important;
-  border: 1px solid rgba(255,255,255,0.12) !important;
-  color: var(--text) !important;   /* <- ini penting */
-  border-radius: 12px !important;
-  padding: 8px;
-  transition: all var(--transition-speed) ease;
-}
-.stNumberInput input:hover, .stTextInput input:hover, .stSelectbox div[data-baseweb="select"] > div:hover {
-  background: rgba(255,255,255,0.08);
-  border: 1px solid var(--brand1);
-}
-
-/* Buttons */
-.stButton > button, div.stFormSubmitButton > button {
-  width: 100%;
-  height: 44px;
-  border-radius: 14px;
-  font-weight: 700;
-  border: 0;
-  color: white;
-  background: var(--brand1);
-  box-shadow: 0 12px 30px rgba(229,9,20,0.25);
-  transition: all var(--transition-speed) ease;
-}
-.stButton > button:hover, div.stFormSubmitButton > button:hover {
-  filter: brightness(1.1);
-  transform: translateY(-2px);
-  background: var(--brand2);
-}
-
-/* Badges */
-.badge-success {
-  background: rgba(34,197,94,0.18);
-  border: 1px solid rgba(34,197,94,0.4);
-  padding: 14px;
-  border-radius: 14px;
-  text-align: center;
-  font-weight: 700;
-}
-.badge-danger {
-  background: rgba(239,68,68,0.18);
-  border: 1px solid rgba(239,68,68,0.4);
-  padding: 14px;
-  border-radius: 14px;
-  text-align: center;
-  font-weight: 700;
-}
-
-/* Progress Bars */
-.stProgress > div > div > div {
-  height: 12px;
-  border-radius: 10px;
-  transition: all var(--transition-speed) ease;
-}
-.stProgress .stProgress > div > div > div[data-testid="stProgress"] {
-  background-color: var(--brand1); /* default color */
-}
-.stProgress.stProgress-danger > div > div > div[data-testid="stProgress"] {
-  background-color: #ef4444;
-}
-.stProgress.stProgress-success > div > div > div[data-testid="stProgress"] {
-  background-color: #22c55e;
-}
-
-/* Diagram Flow Boxes */
-.flow-box {
-  background-color: var(--brand1);
-  color: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  text-align: center;
-  flex:1;
-  font-weight: 600;
-  box-shadow: 0 8px 15px rgba(0,0,0,0.3);
-  transition: all var(--transition-speed);
+/* Dark mode shadow & border adjustment */
+body[data-theme="dark"] .card {
+    background-color: #1d1d1d;
+    box-shadow: var(--card-shadow-dark);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Border lebih tegas dikit di dark mode */
 }
 .flow-box:hover {
   background-color: var(--highlight);
   transform: scale(1.05);
 }
+/* Hover effect - Lebih subtle */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 
+                0 0 10px rgba(229, 9, 20, 0.1); /* Glow merah tipis */
+    border-color: var(--brand1); /* Border berubah jadi merah saat hover */
+}
+/* ---------------- Headings ---------------- */
+h1,h2,h3,h4,h5,h6 {
 
-/* Flow Arrows */
-.flow-arrow {
-  flex:0.05;
-  text-align:center;
-  font-size:28px;
-  font-weight:bold;
+    font-family: 'Roboto', sans-serif;
+    color: var(--brand1);
+
 }
 
-/* Labels */
+/* ---------------- Metrics ---------------- */
+.stMetricValue {
+
+    font-size: 2.5em;
+    font-weight: 800;
+
+    color: var(--brand1);
+
+    transition: all var(--transition-speed);
+
+}
+
+.stMetricValue:hover {
+
+    color: var(--highlight);
+
+    transform: scale(1.1);
+
+    text-shadow: 0 0 10px var(--highlight);
+
+}
+
+/* ---------------- Inputs ---------------- */
+.stNumberInput input,
+.stTextInput input,
+.stTextArea textarea {
+
+    background: var(--input-bg) !important;
+    color: var(--text) !important;
+
+    border-radius: 12px !important;
+
+    border: 1px solid rgba(255,255,255,0.12) !important;
+
+    padding: 8px;
+
+    transition: all var(--transition-speed);
+
+}
+
+/* Hover Input */
+.stNumberInput input:hover,
+.stTextInput input:hover,
+.stTextArea textarea:hover,
+.stSelectbox div[data-baseweb="select"] > div:hover {
+
+    border: 1px solid var(--brand1);
+
+}
+
+/* ---------------- Buttons ---------------- */
+.stButton>button,
+div.stFormSubmitButton>button {
+
+    width: 100%;
+    height: 44px;
+
+    border-radius: 14px;
+
+    font-weight: 700;
+
+    border: 0;
+
+    color: white;
+
+    background: var(--brand1);
+
+    box-shadow: 0 6px 15px rgba(229,9,20,0.25);
+
+    transition: all var(--transition-speed);
+
+}
+
+.stButton>button:hover,
+div.stFormSubmitButton>button:hover {
+
+    filter: brightness(1.1);
+
+    transform: translateY(-2px);
+
+    background: var(--brand2);
+
+}
+
+/* ---------------- Slider ---------------- */
+input[type=range]::-webkit-slider-thumb {
+
+    background: var(--brand1) !important;
+    border: none !important;
+
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+
+    background: rgba(229,9,20,0.6) !important;
+
+}
+
+input[type=range] {
+
+    height: 10px;
+
+    border-radius: 5px;
+
+    background: rgba(255,255,255,0.2);
+
+    margin: 6px 0;
+
+}
+
+input[type=range]:focus {
+
+    outline: none;
+
+}
+
+/* ---------------- Labels ---------------- */
 label {
-  font-size:14px;
-  font-weight:600;
-  color: var(--text);
-  margin-bottom:6px;
-  display:inline-block;
-  text-transform:capitalize;
-} 
-/* Divider */
-hr {
-  border-top: 2px solid var(--brand1);
-  margin:20px 0;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: var(--text);
+
+    margin-bottom: 6px;
+
+    display: inline-block;
+
+    text-transform: capitalize;
+
 }
 
+/* ---------------- Divider ---------------- */
+hr {
+
+    border-top: 2px solid var(--brand1);
+
+    margin: 20px 0;
+
+}
