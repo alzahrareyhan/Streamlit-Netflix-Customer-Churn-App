@@ -30,7 +30,7 @@ def show_prediction():
     # =======================
     # Input method
     # =======================
-    st.markdown("<div class='card'>", unsafe_allow_html=True)
+    # st.markdown("<div class='card'>", unsafe_allow_html=True)
     st.markdown("### 📝 Input Method")
     input_method = st.radio("Choose input method:", ["Manual Input", "Upload File"])
     st.markdown("</div>", unsafe_allow_html=True)
@@ -107,7 +107,7 @@ def show_prediction():
             favorite_genre = st.selectbox("Favorite Genre", ["Action","Comedy","Documentary","Drama","Horror","Romance","Sci-Fi"], help="Customer's favorite genre")
             watch_hours = st.slider("Watch Hours", min_value=0.0, max_value=50.0, value=5.0, help="Total number of hours watched per month")
             # Avg Watch Time Per Day → slider
-            avg_watch_time_per_day = st.slider("Avg Watch Time Per Day", min_value=0.0, max_value=5.0, value=1.0, help="Average number of hours watched per day")
+            avg_watch_time_per_day = st.slider("Avg Watch Time Per Day", min_value=0.0, max_value=5.0, value=0.45, help="Average number of hours watched per day")
             last_login_days = st.slider("Last Login (days)", min_value=0, max_value=30, value=10, help="Number of days since last login")
             monthly_fee = st.number_input("Monthly Fee", min_value=0.0, value=13.99, help="Monthly subscription fee in USD")
             st.markdown("</div>", unsafe_allow_html=True)

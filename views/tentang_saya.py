@@ -4,7 +4,6 @@ import time
 def show_tentang_saya():
     st.markdown("# 👤 Tentang Saya")
 
-    # Custom CSS untuk progress bar warna merah Netflix
     st.markdown("""
     <style>
     .stProgress > div > div > div > div {
