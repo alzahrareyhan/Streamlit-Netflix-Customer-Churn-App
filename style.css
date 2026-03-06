@@ -13,7 +13,7 @@
 
 /* ---------------- Dark Mode Improved ---------------- */
 body[data-theme="dark"] {
-    --bg: #050505;        /* Hitam pekat */
+    --bg: #3B3C36   /* Hitam pekat */
     --text: #f5f5f5;
     --panel: #1a1a1a;     /* Lebih terang dari bg agar kontras */
     --input-bg: #222222;
