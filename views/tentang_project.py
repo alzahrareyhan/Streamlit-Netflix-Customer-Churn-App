@@ -102,8 +102,7 @@ def show_tentang_project():
             font-size: 28px;
             font-weight: bold;
         }
-    body[data-theme="dark"] .card { background-color: #1d1d1d; color: #f5f5f5; }
-    body[data-theme="light"] .card { background-color: #f8f8f8; color: #0b0b0b; }
+
     body[data-theme="dark"] h2 { color: #e50914; }
     body[data-theme="light"] h2 { color: #b20710; }
     body[data-theme="dark"] .kpi { color: #e50914; }
